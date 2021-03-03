@@ -20,9 +20,10 @@ from sklearn.cluster import KMeans
 classes = 3 # Specify the number of clusters to categorise the pixels.
 # Current collectors are grouped into one cluster, Si and Li phases are grouped together into a second cluster, and separator material (and sometimes crystalline Si) is grouped into a third cluster.
 
-separator_dilate = 22 # This dilates the pores of the separator layer for accurate estimation of contours.
+separator_dilate = 7 # This dilates the pores of the separator layer for accurate estimation of contours.
 # Decrease this value to distinguish between the separator and uncycled crystalline silicon especially before lithiation. Increase this value to obtain a smoother contour of the separator layer.
 # e.g., COL-SAM 279 cycled = 7; COL-SAM 279 uncycled = 4.5; COL-SAM 282 uncycled 20x = 22
+
 
 # List of compatible image file types that can be opened using ImageIO
 ImageFileExtensions = ['.3fr', '.arw', '.bay', '.bmp', '.bmq', '.bufr', '.bw', '.cap', '.cine', '.cr2', '.crw', '.cs1', '.cur', '.cut', '.dc2', '.dcm', '.dcr', '.dcx', '.dds', '.dicom', '.dng', '.drf', '.dsc', '.ecw', '.emf', '.eps', '.erf', '.exr', '.fff', '.fit', '.fits', '.flc', '.fli',
@@ -714,6 +715,7 @@ def main(save_path, all_images, rotate_image, num_currentcollectors, pixel_size,
     ax.set_zlabel('Y '+units)
     outpath1 = os.path.join(os.path.join(save_path, "Output_all_frames"), "Orthogonal_projection.tiff")
     plt.savefig(outpath1, dpi=150, facecolor='w', edgecolor='w')#, bbox_inches='tight', pad_inches = 0.1)
+    plt.close()
     
 # Code starts here
 #############################################################################
