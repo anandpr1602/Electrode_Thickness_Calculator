@@ -15,7 +15,7 @@ The script then saves the contours of the central slice as an Excel file. The av
 
 # Installation:
 
-* Please see the [Installation.md](https://github.com/anandpr1602/Electrode_Thickness_Calculator/blob/6239f2709360bdcdb3e8f547fb474802e8417322/Installation.md) file for step-by-step instructions on performing a clean installation using a Python 3.8 environment.
+* Please see the [Installation.md](https://github.com/anandpr1602/Electrode_Thickness_Calculator/blob/main/Installation.md) file for step-by-step instructions on performing a clean installation using a Python 3.8 environment.
 
 # Requirements:
 ## Tkinter:
