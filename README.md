@@ -1,4 +1,4 @@
-# Electrode_Thickness_Calculator
+# Electrode Thickness Calculator
 is a Python script that loads a stack of X-ray CT images from a directory and measure the thickness of each electrode layer assembled between two current collectors. The script has been developed aimed at high-resolution CT scans for e.g., from Zeiss Xradia 620 Versa or 810 Ultra CT imaging systems.
 
 Upon loading the entire image stack, the central slice of the orthogonal projection is selected for interrogation. The brightest layers (current collectors) are segmented via [Otsu binary thresholding](https://scikit-image.org/docs/dev/api/skimage.filters.html#skimage.filters.threshold_otsu). The remaining layers are then classified using [K-Means clustering](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) --> both electrodes into 1 cluster and separator layer into the second cluster. Because both electrodes have similar X-ray absorption values, they are clustered into one label.
